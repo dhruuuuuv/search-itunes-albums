@@ -78,14 +78,27 @@ export default Mn.View.extend({
     this.ui.search.attr('disabled', true);
     if (query && query.length > 0) {
       this.collection.switchMode('infinite');
-      this.collection.fetch({ data: {
+   //    fetch({
+   //       dataType: 'jsonp',
+   //       success : function (data) {
+   //         console.log(data);
+   //       }
+   // });
+      this.collection.fetch({
+          dataType: 'jsonp',
+          data: {
         term: query
       }}).then(() => {
         this.ui.search.attr('disabled', false);
       });
     } else {
       this.collection.switchMode('client');
-      this.collection.fetch().then(() => {
+      this.collection.fetch({
+         dataType: 'jsonp',
+         success : function (data) {
+           console.log(data);
+         }
+   }).then(() => {
         this.ui.search.attr('disabled', false);
       });
     }

@@ -1,7 +1,7 @@
 import PageableCollection from 'backbone.paginator';
 
 let AlbumModel = Bb.Model.extend({
-  urlRoot: 'https://itunes.apple.com/search?term="hello"&mediaType="music"',
+  urlRoot: 'https://itunes.apple.com/search?',
   //url: 'http://localhost:3000/recipes',
   defaults: {
       // prep: '-',
@@ -25,15 +25,17 @@ let AlbumModel = Bb.Model.extend({
 
 let AlbumsCollection = PageableCollection.extend({
   // TODO obviously reconfigure to take search as input
-  url: 'https://itunes.apple.com/search?term="hello"&mediaType="music"',
+  url: 'https://itunes.apple.com/search?',
   model: AlbumModel,
   // mode: 'infinite',
   state: {
     pageSize: 20,
+    media: 'music'
   },
   queryParams: {
     // currentPage: '_page',
-    pageSize: '_limit'
+    pageSize: 'limit',
+    media: 'music'
   },
   parse: function(response) {
     // return { totalRecords: this.totalRecords || 0};
