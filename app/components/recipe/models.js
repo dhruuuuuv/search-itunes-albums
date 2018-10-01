@@ -1,25 +1,30 @@
 import PageableCollection from 'backbone.paginator';
 
-let RecipeModel = Bb.Model.extend({
-  urlRoot: 'http://localhost:3000/recipes',
+let AlbumModel = Bb.Model.extend({
+  urlRoot: 'https://itunes.apple.com/search?',
   //url: 'http://localhost:3000/recipes',
   defaults: {
-    prep: '-',
-    cook: '-',
-    portions: '-',
+      // prep: '-',
+      // cook: '-',
+      // portions: '-',
+      artist: '-',
+      album: '-',
   },
   schema: {
-    title: { type: 'Text', validators: ['required'] },
-    prep: 'Text',
-    cook: 'Text',
-    directions: { type: 'TextArea', validators: ['required'] },
-    ingredients: { type: 'TextArea', validators: ['required'] },
+    artwork: { type: 'Image', validators: ['required'] },
+    artist: 'Text',
+    album: 'Text',
+    // title: { type: 'Text', validators: ['required'] },
+    // prep: 'Text',
+    // cook: 'Text',
+    // directions: { type: 'TextArea', validators: ['required'] },
+    // ingredients: { type: 'TextArea', validators: ['required'] },
   },
 });
 
-let RecipesCollection = PageableCollection.extend({
-  url: 'http://localhost:3000/recipes',
-  model: RecipeModel,
+let AlbumsCollection = PageableCollection.extend({
+  url: 'https://itunes.apple.com/search?',
+  model: AlbumModel,
   mode: 'infinite',
   state: {
     pageSize: 20,
@@ -43,6 +48,6 @@ let RecipesCollection = PageableCollection.extend({
 });
 
 export default {
-  RecipeModel,
-  RecipesCollection,
+  AlbumModel,
+  AlbumsCollection,
 }
