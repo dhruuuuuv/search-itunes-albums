@@ -6,6 +6,10 @@
   background: #f4f5f6;
 }
 
+.navbar {
+    padding: 20px;
+}
+
 form {
   width: 100%;
 }
