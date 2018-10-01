@@ -1,8 +1,8 @@
-import RecipeList from 'recipe/list/index.js';
+import AlbumList from 'album/list/index.js';
 
 //BEGIN ROUTES
 var routes = {
-  '': 'recipes'
+  '': 'albums'
 }
 //END ROUTES
 
@@ -10,7 +10,7 @@ export default (layout) => Backbone.Router.extend({
   routes,
   initialize(options) {
   },
-  recipes(params) {
-    layout.showChildView('region1', new RecipeList());
+  albums(params) {
+    layout.showChildView('region1', new AlbumList());
   },
 })

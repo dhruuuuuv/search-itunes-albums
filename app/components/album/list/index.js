@@ -14,7 +14,7 @@ let TableItem = Mn.View.extend({
   onClick: function(e) {
     e.preventDefault();
     Backbone.history.navigate(
-      `recipe/${this.model.get('id')}`,
+      `album/${this.model.get('id')}`,
       {trigger: true}
     );
   }
@@ -48,7 +48,7 @@ export default Mn.View.extend({
     'click @ui.next': 'onNext',
   },
   initialize: function() {
-    this.collection = new models.RecipesCollection();
+    this.collection = new models.AlbumsCollection();
     this._search = _.debounce(_.bind(this.search, this), 2000);
     window.probe = this.collection;
     this.collection.fetch();
@@ -74,7 +74,7 @@ export default Mn.View.extend({
     if (query && query.length > 0) {
       this.collection.switchMode('infinite');
       this.collection.fetch({ data: {
-        q: query
+        term: query
       }}).then(() => {
         this.ui.search.attr('disabled', false);
       });
