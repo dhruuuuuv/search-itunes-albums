@@ -18,7 +18,7 @@ export default Mn.View.extend({
   },
   initialize: function() {
     window.probe = this;
-    this.model = new models.AlbumModel(this.options);
+    this.model = new models.RecipeModel(this.options);
     this.model.set('loading', true);
 
     this.model.fetch().then(() => {

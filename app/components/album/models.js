@@ -35,8 +35,10 @@ let AlbumsCollection = PageableCollection.extend({
     // currentPage: '_page',
     pageSize: '_limit'
   },
-  parseState: function(response) {
-    return { totalRecords: this.totalRecords || 0};
+  parse: function(response) {
+    // return { totalRecords: this.totalRecords || 0};
+    console.log(response.results);
+    return response.results;
   },
   fetch: function(options) {
     var jqXHR = PageableCollection.prototype.fetch.call(this, options);

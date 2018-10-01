@@ -51,7 +51,12 @@ export default Mn.View.extend({
     this.collection = new models.AlbumsCollection();
     this._search = _.debounce(_.bind(this.search, this), 2000);
     window.probe = this.collection;
-    this.collection.fetch();
+    this.collection.fetch({
+       dataType: 'jsonp',
+       success : function (data) {
+         console.log(data);
+       }
+ });
     this.listenTo(this.collection, 'reset', () => {
       if (this.collection.hasPreviousPage()) {
         this.ui.previous.removeClass('is-hidden')
