@@ -23,7 +23,7 @@ A small web-app to explore albums using the iTunes API. Made using Backbone and 
 ## Notes
 
   * The search matches any query field (track, artist title).
-  * The grid view doesn't show track name (the list view does), so there may be multiple entries of each album, corresponding to
+  * The grid view doesn't show the track name (the list view does), so there may be multiple entries of each album, corresponding to
   different tracks on an album.
 
 ## Screenshots
