@@ -11,7 +11,7 @@ A small web-app to explore albums using the iTunes API. Made using Backbone and 
 
 * Running
   * run `npm run dev` - to start the webpack-dev-server
-  * visit `localhost:1337/#`` to use the app
+  * visit `localhost:1337/#` to use the app
 
 ## Usage
 
