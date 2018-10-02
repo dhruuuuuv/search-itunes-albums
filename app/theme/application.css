@@ -21,19 +21,21 @@ form {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   /* grid-column-gap: 50px; */
   /* background-color: #2196F3; */
   /* padding: 30px; */
 }
 
 .grid-item {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: 20px;
-  /* font-size: 30px; */
   text-align: center;
   float: center;
   justify-content: center;
+}
+
+#foot {
+  padding: 50px;
 }
 
 a.button {

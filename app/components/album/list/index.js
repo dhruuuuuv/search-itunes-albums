@@ -77,7 +77,7 @@ export default Mn.View.extend({
   search: function(query) {
     this.ui.search.attr('disabled', true);
     if (query && query.length > 0) {
-      this.collection.switchMode('infinite');
+      this.collection.switchMode('client');
    //    fetch({
    //       dataType: 'jsonp',
    //       success : function (data) {
