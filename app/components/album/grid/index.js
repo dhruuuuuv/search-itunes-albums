@@ -5,22 +5,12 @@ import models from '../models.js';
 let GridItem = Mn.View.extend({
   className: 'grid-item',
   template: templateItem,
+  ui: {
+    'item': '.js-item',
+  },
   initialize: function() {
       this.render();
   }
-  // ui: {
-  //   'item': '.js-item',
-  // },
-  // events: {
-  //   'click @ui.item': 'onClick',
-  // },
-  // onClick: function(e) {
-  //   e.preventDefault();
-  //   Backbone.history.navigate(
-  //     `album/${this.model.get('id')}`,
-  //     {trigger: true}
-  //   );
-  // }
 });
 
 let GridBody = Mn.CollectionView.extend({
@@ -36,7 +26,6 @@ export default Mn.View.extend({
   template,
   regions: {
     body: {
-      // el: 'tbody',
       el: ".gridview",
       replaceElement: true
     }
@@ -60,7 +49,7 @@ export default Mn.View.extend({
        success : function (data) {
          console.log(data);
        }
- });
+     });
     this.listenTo(this.collection, 'reset', () => {
       if (this.collection.hasPreviousPage()) {
         this.ui.previous.removeClass('is-hidden')
@@ -81,7 +70,7 @@ export default Mn.View.extend({
   search: function(query) {
     this.ui.search.attr('disabled', true);
     if (query && query.length > 0) {
-      this.collection.switchMode('infinite');
+      this.collection.switchMode('client');
       this.collection.fetch({
           dataType: 'jsonp',
           data: {
