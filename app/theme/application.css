@@ -30,8 +30,13 @@ form {
   /* background-color: rgba(255, 255, 255, 0.8); */
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: 20px;
-  align
   /* font-size: 30px; */
-  text-align: justify;
+  text-align: center;
+  float: center;
   justify-content: center;
+}
+
+a.button {
+    float: right;
+    /* padding: 10px; */
 }

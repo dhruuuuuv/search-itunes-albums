@@ -3,11 +3,13 @@ import PageableCollection from 'backbone.paginator';
 let AlbumModel = Bb.Model.extend({
   urlRoot: 'https://itunes.apple.com/search?',
   defaults: {
+      trackName: '-',
       artistName: '-',
       collectionName: '-',
   },
   schema: {
     artworkUrl100: { type: 'Image', validators: ['required'] },
+    trackName: 'Text',
     artistName: 'Text',
     CollectionName: 'Text',
   },
