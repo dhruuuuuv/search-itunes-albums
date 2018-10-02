@@ -1,42 +1,33 @@
-# Webpack and MarionetteJS
+# Search iTunes Albums
 
-A small boilerplate introducing [Webpack](https://webpack.github.io/) and es6 features through [Babel](https://babel.github.io/) to a CRUD Marionette/Backbone application.
+A small web-app to explore albums using the iTunes API. Made using Backbone and Marionette.
+
 
 ## Getting started
 
 * Install
-  * Clone the repository: `git clone https://github.com/alexpsi/webpack-marionette`
+  * Clone the repository: `git clone https://github.com/dhruuuuuv/search-itunes-albums`
   * Inside this folder run: `npm install`
 
-* Build
-  * `npm run build` - builds you project inside the `/dist` directory, notice that each route has a separate bundle thus allowing for lazy loading.
-  * `npm run analyze` - creates a size report for bundled libraries
+* Running
+  * run `npm run dev` - to start the webpack-dev-server
+  * visit localhost:1337/# to use the app
 
-* Development
-  * `npm run dev` - launches the project through webpack-dev-server utilizing
-  the configuration from webpack-dev.config and hotreload for css assets.
-  * `npm run dash` - As above but uses webpack-dashboard
-  * `npm run eject` - Deletes sample application leaving only the core files.
+## Usage
 
-* Test
-  * `npm test` - Searches inside the tests folder of each component directory for
-  .js files and runs them with mocha and chai over Karma.
-  * `npm run tdd` - As above but watches files for changes and reruns tests.
+  * Search for results by typing in the search bar (no need to click enter).
+  * The app has live updating. You may need to wait a second for the data from the server to come through.
+  * Press the button to switch between Grid Mode (default) and List Mode.
+  * Returns 20 albums per page, with pageable results. Use the buttons to navigate the results.
 
-## Features
+## Notes
 
-  * Utilizes Backbone router along with Webpack requireContext so additional libraries utilized by a certain route are lazily added when the route loads.
-  The routes are defined in the routes directory and a custom webpack plugin collects routes definition from the comments inside the routes folder.
+  * The search matches any query field (track, artist title).
+  * The grid view doesn't show track name (the list view does), so there may be multiple entries of each album, corresponding to
+  different tracks on an album.
 
-  * ES6 async/await syntax
+## Screenshots
 
-  * A basic structure, consisting of 3 folders, `components` which is used as a
-  place to store your views, `routes` which is where you define your routes and
-  route initializations (check example app for sample route definition), `theme` which stores tha application layout as well as global stylesheets.
+![grid view](1.png)
 
-## Example app
-  The example app is an editable Cookbook, it utilizes a list of recipes taken
-  from https://github.com/mikeizbicki/ucr-cs100 and packaged as a json file which
-  is server by json-server, to run the json-server run `npm run json`, then in another terminal run `npm run dev` and navigate to localhost:1337. Inside the example app
-  you can find a full collection of views and models allowing to do a full set of CRUD operations on a REST resource. The example app uses [Backbone.paginator](https://github.com/backbone-paginator/backbone.paginator) and
-  [Backbone.forms](https://github.com/backbone-paginator/backbone.paginator) for creating forms based on the schemas in the models. 
+![list view](2.png)
