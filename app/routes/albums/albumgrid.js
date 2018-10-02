@@ -1,8 +1,8 @@
-import AlbumList from 'album/list/index.js';
+import AlbumGrid from 'album/grid/index.js';
 
 //BEGIN ROUTES
 var routes = {
-  'list': 'albums'
+  '': 'albumgrid'
 }
 //END ROUTES
 
@@ -10,7 +10,7 @@ export default (layout) => Backbone.Router.extend({
   routes,
   initialize(options) {
   },
-  albums(params) {
-    layout.showChildView('region1', new AlbumList());
+  albumgrid(params) {
+    layout.showChildView('region1', new AlbumGrid());
   },
 })

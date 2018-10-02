@@ -2,12 +2,7 @@ import PageableCollection from 'backbone.paginator';
 
 let AlbumModel = Bb.Model.extend({
   urlRoot: 'https://itunes.apple.com/search?',
-  //url: 'http://localhost:3000/recipes',
   defaults: {
-      // prep: '-',
-      // cook: '-',
-      // portions: '-',
-      artworkUrl100: '_',
       artistName: '-',
       collectionName: '-',
   },
@@ -15,19 +10,13 @@ let AlbumModel = Bb.Model.extend({
     artworkUrl100: { type: 'Image', validators: ['required'] },
     artistName: 'Text',
     CollectionName: 'Text',
-    // title: { type: 'Text', validators: ['required'] },
-    // prep: 'Text',
-    // cook: 'Text',
-    // directions: { type: 'TextArea', validators: ['required'] },
-    // ingredients: { type: 'TextArea', validators: ['required'] },
   },
 });
 
 let AlbumsCollection = PageableCollection.extend({
-  // TODO obviously reconfigure to take search as input
   url: 'https://itunes.apple.com/search?',
   model: AlbumModel,
-  // mode: 'infinite',
+  mode: 'infinite',
   state: {
     pageSize: 20,
     media: 'music'
